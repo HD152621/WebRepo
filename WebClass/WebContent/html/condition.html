@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+  function check()
+  {
+    if(document.getElementById("male").checked)
+    {
+      if(document.getElementById("age").value>=15&&document.getElementById("age").value<=69&&document.getElementById("weight").value>=50){
+        document.getElementById('a').innerHTML= "헌혈 가능합니다.";
+      }
+      else if(document.getElementById("age").value<15&&document.getElementById("age").value>69)
+      {
+        document.getElementById('a').innerHTML="연령 부적합";
+      }
+      else if(document.getElementById("weight").value<50)
+      {
+        document.getElementById('a').innerHTML="체중미달";
+      }
+    }
+
+    if(document.getElementById("female").checked)
+    {
+      if(document.getElementById("age").value>=15&&document.getElementById("age").value<=69&&document.getElementById("weight").value>=45){
+        document.getElementById('a').innerHTML="헌혈 가능합니다.";
+      }
+      else if(document.getElementById("age").value<15&&document.getElementById("age").value>69){document.getElementById('a').innerHTML="연령 부적합";}
+      else if(document.getElementById("weight").value<45){document.getElementById('a').innerHTML="체중미달";}
+    }
+  }
+</script>
+</head>
+<body>
+  <h1>헌혈 조건 체크</h1>
+  나이 : <input type="text"name="age" id="age"/>세 <br />
+  남자<input type="radio" name="gender" id="male" checked>
+  여자<input type="radio" name="gender"id="female"> <br />
+  몸무게<input type="text"name:"kg"   id="weight">kg <br />
+  <input type="button" value= "헌혈 조건 체크" onclick="check();"> <br />
+  <p id ="a"></p>
+
+</body>
+</html>
