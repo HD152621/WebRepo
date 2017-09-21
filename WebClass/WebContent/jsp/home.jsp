@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -12,6 +15,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
 	integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
 	crossorigin="anonymous">
+<link rel ="stylesheet" href="../css/footer.css">
 <style>
 div.container {
 	padding-top: 30px;
@@ -28,7 +32,6 @@ div.container {
      </script>
 </head>
 <body>
-
 	<nav class="navbar navbar-light" style="background-color: #1388d0;">
 		<a class="navbar-brand" href="#">HOME</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -39,18 +42,7 @@ div.container {
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item" onmouseover="menu_over(this);"
-					onmouseout="menu_out(this);"><a class="nav-link" href="a.html">메뉴1
-						<span class="sr-only">(current)</span>
-				</a></li>
-				<li class="nav-item" onmouseover="menu_over(this);"
-					onmouseout="menu_out(this);"><a class="nav-link" href="p.html">메뉴2</a>
-				</li>
-				<li class="nav-item" onmouseover="menu_over(this);"
-					onmouseout="menu_out(this);"><a class="nav-link"
-					href="check.html">메뉴3</a></li>
-			</ul>
+	<%@include file = "menu.jsp" %>
 			<form class="form-inline my-2 my-lg-0" id="loginForm">
 				<input class="form-control mr-sm-2" type="text" placeholder="ID"
 					aria-label="ID" id="id" required> <input
@@ -79,27 +71,9 @@ div.container {
 	</div>
 
 	<!-- 모달창 -->
-	<div class="modal" id="myModal">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title">로그인 결과</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<p></p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
+	<%@ include file ="modal.jsp" %>
+	<%@ include file ="footer.jsp" %>
+	
 
 
 	<!-- Optional JavaScript -->

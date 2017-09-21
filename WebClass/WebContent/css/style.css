@@ -1,0 +1,155 @@
+html,body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*main스타일*/
+.main_title{
+  background-image: url('../image/title.jpeg');
+  background-attachment: fixed;
+  backgrund-size: cover;
+  width: 100%;
+  height: 700px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  display: table;
+}
+
+.main_title:before {
+      right: 50%;
+      border-right: 1000px solid transparent;
+      border-left: 1000px solid;
+    }
+
+    .main_title:after {
+      left: 50%;
+      border-left: 900px solid transparent;
+      border-right: 900px solid;
+    }
+
+    .main_title:after,
+    .main_title:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 50%;
+      z-index: 100;
+      border-bottom: 100px solid #FFF;
+      -moz-transform: rotate(0.000005deg);
+      -webkit-transform: rotate(0.000005deg);
+      -o-transform: rotate(0.000005deg);
+      -ms-transform: rotate(0.000005deg);
+      transform: rotate(0.000010deg);
+    }
+
+.main_title .table{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.main_title h1{
+  font-size: 100px;
+  color: rgba(#969695, 0.89);
+}
+
+.container{
+  padding-top:100px;
+  padding-bottom: 100px;
+}
+
+.intro{
+  text-align: center;
+}
+
+.intro img{
+  margin-bottom: 30px;
+  box-shadow: 5px 5px 10px #cccccc;
+}
+/*main스타일*/
+
+/*hobby스타일*/
+.hobby{
+  margin-top: 0px;
+}
+
+.hobby section{
+  margin-top: 100px;
+}
+
+.middle{
+  text-align: center;
+}
+
+.article{
+  padding: 140px;
+  font-size: 20px;
+  box-shadow: 1px 1px 1px #cccccc;
+}
+
+.margin{
+  margin-top: 100px;
+}
+
+img.a{
+    box-shadow: 5px 5px 10px #cccccc;
+}
+
+/*hobby 끝*/
+
+/*bucketlist*/
+.caption{
+  padding-top: 10px;
+}
+.caption h4{
+  text-align: center;
+  font-size: 14px;
+}
+/*bucketlist 끝*/
+
+/*login*/
+#grey{
+  background-color: #dbdbdb;
+}
+.page-title{
+  margin-top: 100px;
+  text-align: center;
+}
+
+.page-title h1{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.page-wrapper{
+  width: 480px;
+  margin: 0 auto;
+  margin-top: 25px;
+  padding: 0;
+  height: 500px;
+  background-color: white;
+  border: 1px solid rgb(219, 222, 227);
+}
+
+.group{
+  text-align: center;
+  padding-top: 130px;
+}
+
+.username input, .number input, .id, .pw{
+  width: 240px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid  rgb(219, 222, 227);
+}
+
+.radio{
+  margin-top: 50px;
+  color: #3d3d3d;
+}
+
+
+/*login 끝*/
