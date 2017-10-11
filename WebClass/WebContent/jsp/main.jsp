@@ -72,17 +72,17 @@
   <div class="container">
     <div class="row">
       <div class="col-xl-4 intro">
-        <img class="rounded-circle" width="140" height="140" src="../image/dimi_logo.png" alt="dimiLogo"/>
+        <img class="rounded-circle" width="140" height="140" src="WebClass/WebContent/image/dimi_logo.png" alt="dimiLogo"/>
         <h4>학교</h4>
         <p>한국 디지털 미디어 고등학교 재학 중</p>
       </div>
       <div class="col-xl-4 intro">
-        <img class="rounded-circle" width="140" height="140" src="../image/codding.jpg" alt="codding"/>
+        <img class="rounded-circle" width="140" height="140" src="WebClass/WebContent/image/codding.jpg" alt="codding"/>
         <h4>개발 분야</h4>
         <p>html&css, php, node-js, webDesign</p>
       </div>
       <div class="col-xl-4 intro">
-        <img class="rounded-circle" width="140" height="140" src="../image/front.jpg" alt="front"/>
+        <img class="rounded-circle" width="140" height="140" src="WebClass/WebContent/image/front.jpg" alt="front"/>
         <h4>장래 희망</h4>
         <p>프론트 개발자</p>
       </div>
