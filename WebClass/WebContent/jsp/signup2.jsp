@@ -12,23 +12,45 @@
 <body>
 <div class="container">
 
+<%if("error".equals(request.getAttribute("msg"))){ %>
   <form id="signupForm" class="form-signin" action="/WebClass/signup2" method="post">
     <h2 class="form-signin-heading">Please sign up</h2>
     
     <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" name="id" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <input type="email" name="id" id="inputEmail" class="form-control" placeholder="Email address" required autofocus value = <%=request.getParameter("id") %>>
     
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required>
+    <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required value = <%=request.getParameter("pwd") %>>
 	
 	<label for="inputName" class="sr-only">Name</label>
-    <input type="text" name="name" id="inputName" class="form-control" placeholder="Name" required>
+    <input type="text" name="name" id="inputName" class="form-control" placeholder="Name" required value = <%=request.getParameter("name") %>>
 	
 	<label for="inputNickName" class="sr-only">Nick Name</label>
-    <input type="text" name="nickname" id="inputNickName" class="form-control" placeholder="Nickname" required>
+    <input type="text" name="nickname" id="inputNickName" class="form-control" placeholder="Nickname" required value = <%=request.getParameter("nickname") %>>
     <br>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
   </form>
+  <%}else{ %>
+  <form id="signupForm" class="form-signin" action="/WebClass/signup2" method="post">
+    <h2 class="form-signin-heading">Please sign up</h2>
+    
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" name="id" id="inputEmail" class="form-control" placeholder="Email address" required autofocus  >
+    
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required >
+	
+	<label for="inputName" class="sr-only">Name</label>
+    <input type="text" name="name" id="inputName" class="form-control" placeholder="Name" required >
+	
+	<label for="inputNickName" class="sr-only">Nick Name</label>
+    <input type="text" name="nickname" id="inputNickName" class="form-control" placeholder="Nickname" required >
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+  </form>
+  <%} %>
+  
+  
 </div>
 
 <%@ include file="modal.jsp" %>
@@ -37,35 +59,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
-
 <script>
-     $(function(){
-        $('#signupForm').submit(function(event){
-           // 자동으로 submit되는 걸 막기
-           event.preventDefault();
+<%-- 회원가입이 실패한 경우 처리 추가 --%>
+<% if("error".equals(request.getAttribute("msg"))){%>
+   var myModal = $('#myModal');
+   myModal.find('.modal-title').text('Sign Up error');
+   myModal.find('.modal-body').text('회원가입시 오류가 생겼습니다.');
 
-           // id,pw,name,nickname값 가져오기
-           // document.getElementById("id").value
-           var id = $('#id').val();
-           var pwd = $('#pwd').val();
-           var name = $('#name').val();
-           var nickname = $('#nickname').val();
-          
+	    myModal.modal();
+<%}%>
 
-     
-		     <%-- 로그인이 실패한 경우 처리 추가 --%>
-		     <% if("error".equals(request.getAttribute("msg"))){%>
-		        var myModal = $('#myModal');
-		        myModal.find('.modal-title').text('Sign Up error');
-		        myModal.find('.modal-body').text('회원가입시 오류가 생겼습니다.');
-		        
-		  	  myModal.modal();
-		  <%}%>
-     
-          });
-});
-
+    
 </script>
+
+
 
 </body>
 </html>

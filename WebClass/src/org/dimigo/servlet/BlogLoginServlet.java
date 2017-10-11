@@ -32,7 +32,8 @@ public class BlogLoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		 RequestDispatcher rd = request.getRequestDispatcher("jsp/login3.jsp");
+	     rd.forward(request, response);
 	}
 
 	/**
@@ -44,19 +45,22 @@ public class BlogLoginServlet extends HttpServlet {
 	      
 	      request.setCharacterEncoding("utf-8");
 	      String id = request.getParameter("id");
-	      String pw = request.getParameter("pw");
-	      System.out.printf("id : %s, pw : %s\n",id,pw);
+	      String pwd = request.getParameter("pwd");
+	      System.out.printf("id : %s, pwd : %s\n",id,pwd);
+	      
+	   // session에 사용자 생성
+          HttpSession session = request.getSession();
+          //세션에 사용자 정보를 생성하여 담기
+          UserVo user = new UserVo();
+          
+          user.setId(id);
+          user.setName("TEST");
+          user.setNickname("test");
+          user.setPwd(pwd);
+          session.setAttribute("user", user);
 	      
 	      if(id.equals("test@naver.com")){
-	    	// session에 사용자 생성
-	          HttpSession session = request.getSession();
-	          //세션에 사용자 정보를 생성하여 담기
-	          UserVo user = new UserVo();
-	          
-	          user.setId(id);
-	          user.setName("TEST");
-	          user.setNickname("test");
-	          session.setAttribute("user", user);
+	    	
 	          
 	          RequestDispatcher rd = request.getRequestDispatcher("jsp/main.jsp");
 	          rd.forward(request, response);

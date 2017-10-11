@@ -41,7 +41,7 @@
     	UserVo user = (UserVo) session.getAttribute("user");
     	if(user == null){
     %>
-       <a class="text-bold text-white" style="text-decoration: none" href="/WebClass/jsp/login3.jsp">Sign in</a>
+       <a class="text-bold text-white" style="text-decoration: none" href="/WebClass/bloglogin">Sign in</a>
        <%}else{ %>
        <%-- 세션이 있는 경우 --%>
        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">

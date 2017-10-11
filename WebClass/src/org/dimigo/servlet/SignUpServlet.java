@@ -53,7 +53,7 @@ public class SignUpServlet extends HttpServlet {
 	      
 	      System.out.printf("id : %s, pwd : %s, name : %s, nickname : %s\n",id,pwd,name,nickname);
 	      
-	      	  boolean result = true;
+	      	  boolean result = false;
 	    	  jsonObject.put("result", result);
 	    	  out.print(jsonObject);
 	    	  System.out.println(jsonObject);

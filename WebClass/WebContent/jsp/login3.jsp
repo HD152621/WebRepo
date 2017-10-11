@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="org.dimigo.vo.UserVo" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,14 +13,17 @@
 <body>
 <div class="container">
 
+<%
+	UserVo user = (UserVo) session.getAttribute("user");
+%>
   <form class="form-signin" action="/WebClass/bloglogin" method="post">
     <h2 class="form-signin-heading">Please sign in</h2>
     
     <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" name="id" id="inputEmail" class="form-control" placeholder="Email address" required autofocus value= <%=request.getParameter("id")%>>
+    <input type="email" name="id" id="inputEmail" class="form-control" placeholder="Email address" required autofocus value= <%if(user!=null){%>" <%=user.getId()%>"<% }%> >
     
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required value= <%=request.getParameter("pwd")%>>
+    <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required value= <%if(user!=null){%> "<%=user.getPwd()%>"<%} %>>
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   </form>
@@ -34,10 +38,12 @@
 
 <script>
    <%-- 로그인이 실패한 경우 처리 추가 --%>
-   <% if("error".equals(request.getAttribute("msg"))){%>      var myModal = $('#myModal');
+   <% if("error".equals(request.getAttribute("msg"))){%>
+      var myModal = $('#myModal');
       myModal.find('.modal-title').text('Login Error');
       myModal.find('.modal-body').text('Invalid username or password');
-      	  myModal.modal();
+      
+	  myModal.modal();
 <%}%>
 </script>
 
